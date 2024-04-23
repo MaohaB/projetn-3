@@ -1,5 +1,4 @@
-////  id1=Objets id2=Appartements id3=Hotels & restaurants ////
-
+// works //
 fetch("http://localhost:5678/api/works")
 .then(function(response) {
 	if(response.ok) {
@@ -11,25 +10,27 @@ fetch("http://localhost:5678/api/works")
 	console.log(works);
 	works.forEach((work, index) => {
 		// figure //
-		let myFigure = document.createElement('figure');
-		myFigure.setAttribute('class', `work-item category-id-0 category-id-${work.categoryId}`);
-		myFigure.setAttribute('id', `work-item-${work.id}`);
+		const Figure = document.createElement('figure');
+		Figure.setAttribute('class', `work-item category-id-0 category-id-${work.categoryId}`);
+		Figure.setAttribute('id', `work-item-${work.id}`);
 		// image //
-		let myImg = document.createElement('img');
-		myImg.setAttribute('src', work.imageUrl);
-		myImg.setAttribute('alt', work.title);
-		myFigure.appendChild(myImg);
+		const Img = document.createElement('img');
+		Img.setAttribute('src', work.imageUrl);
+		Img.setAttribute('alt', work.title);
+		Figure.appendChild(Img);
 		// figcaption //
-		let myFigCaption = document.createElement('figcaption');
-		myFigCaption.textContent = work.title;
-		myFigure.appendChild(myFigCaption);
+		const FigCaption = document.createElement('figcaption');
+		FigCaption.textContent = work.title;
+		Figure.appendChild(FigCaption);
 
-		document.querySelector("div.gallery").appendChild(myFigure);
+		document.querySelector("div.gallery").appendChild(Figure);
 	});
 })
 .catch(function(err) {
 	console.log(err);
 });
+
+
 
 // boutons //
 fetch("http://localhost:5678/api/categories")
@@ -46,9 +47,9 @@ fetch("http://localhost:5678/api/categories")
 
 	const bouton = document.getElementById('boutons');
 
-	categories.forEach((category, index) => {
+	categories.forEach((category) => {
 	  const btn = document.createElement('button');
 	  btn.textContent = category.name;
 	  bouton.appendChild(btn); });
-
 })
+

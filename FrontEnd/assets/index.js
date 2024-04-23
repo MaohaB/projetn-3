@@ -31,10 +31,24 @@ fetch("http://localhost:5678/api/works")
 	console.log(err);
 });
 
-
-
-
 // boutons //
+fetch("http://localhost:5678/api/categories")
+.then(function(response) {
+	if(response.ok) {
+		return response.json();
+	}
+})
+.then(function(data) {
+	let categories = data;
+	categories.unshift({id: 0, name: "Tous"});
 
-var button1 = document.createElement("button1");
-button1.innerHTML = "Objets"
+	console.log(categories);
+
+	const bouton = document.getElementById('boutons');
+
+	categories.forEach((category, index) => {
+	  const btn = document.createElement('button');
+	  btn.textContent = category.name;
+	  bouton.appendChild(btn); });
+
+})

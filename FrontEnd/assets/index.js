@@ -63,9 +63,11 @@ buttons.forEach(buttons => {
 		});
 		//pour bouton "tous"//
 		if (btnId == "0") {
-		getWorks();
+			document.querySelectorAll(".work-item").forEach(workItem => {
+				workItem.style.display = "block";
+			})
 		}else {
-			// pour les autres boutons// 
+		// pour les autres boutons// 
 			document.querySelectorAll(`.work-item.category-id-${btnId}`).forEach(workItem => {
 				workItem.style.display = "block";
 			});

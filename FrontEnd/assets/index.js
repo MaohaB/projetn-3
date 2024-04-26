@@ -61,13 +61,16 @@ buttons.forEach(buttons => {
 		document.querySelectorAll(".work-item").forEach(workItem => {
 			workItem.style.display = "none";
 		});
-		document.querySelectorAll(`.work-item.category-id-${btnId}`).forEach(workItem => {
-			workItem.style.display = "block";
-		});
+		//pour bouton "tous"//
+		if (btnId == "0") {
+		getWorks();
+		}else {
+			// pour les autres boutons// 
+			document.querySelectorAll(`.work-item.category-id-${btnId}`).forEach(workItem => {
+				workItem.style.display = "block";
+			});
+		}
 		console.log(btnId)
 	});
-
 });
-
-
 })

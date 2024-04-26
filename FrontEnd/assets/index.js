@@ -54,14 +54,20 @@ fetch("http://localhost:5678/api/categories")
       bouton.appendChild(btn);
     });
 // filtres //
-    const buttons = document.querySelectorAll("button")
-	buttons.forEach(buttons => {
-		buttons.addEventListener("click",(e) => {
-			console.log(e.target.id)
+const buttons = document.querySelectorAll("button")
+buttons.forEach(buttons => {
+	buttons.addEventListener("click",(e) => {
+		btnId = e.target.id
+		document.querySelectorAll(".work-item").forEach(workItem => {
+			workItem.style.display = "none";
 		});
-
+		document.querySelectorAll(`.work-item.category-id-${btnId}`).forEach(workItem => {
+			workItem.style.display = "block";
+		});
+		console.log(btnId)
 	});
-	
 
-  })
+});
 
+
+})

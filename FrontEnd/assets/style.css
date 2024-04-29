@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #FFFEF8;
 }
 ol, ul {
 	list-style: none;
@@ -185,7 +186,6 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
-
 #boutons {
 	display: flex;
 	justify-content: center; 
@@ -197,13 +197,86 @@ button {
 	text-align: center;
 	border-radius: 60px;
 	border:2px solid #1D6154;
-	background: white;
+	background: #FFFEF8;
 	margin:10px;
 	padding: 10px 20px;
 	color: #1D6154;
 }
 button:focus {
 	background-color: #1D6154;
-	color: white;
+	color: #FFFEF8;
 	border: 2px solid #1D6154;
+}
+
+/* log in */
+.logincard {
+	margin-top: 8%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+}
+.login {
+	margin-top: 30px;
+	padding: 20px;
+	width: 400px ;
+	align-items: center;
+  	justify-content: center;
+  }
+  
+ .login h2 {
+	text-align: center;
+  }
+  
+  form {
+	display: flex;
+	flex-direction: column;
+	color: black;
+	margin-top: 50px;
+  }
+  
+  .login label {
+	margin-bottom: 6px;
+	font-family: "Work Sans";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal; 
+  }
+  
+ .login input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	width: 380px;
+	text-align: center;
+	margin-bottom: 40px;
+	color: ##FFFEF8;
+	border: ##FFFEF8;
+	align-items: center;
+ 	justify-content: center;
+  }
+  .login button{
+	align-items: center;
+ 	justify-content: center;
+	color: white;
+	background-color: #1D6154;
+	width: 180px;
+	margin-bottom:30px;
+  }
+  .loginbas {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+  }
+  /*liens*/
+  a {
+	text-decoration: none;
+	color: black;
+  }
+  /* lien nav login */
+  nav a:hover {
+	color: #B1663C;
 }

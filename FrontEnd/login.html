@@ -11,8 +11,11 @@
       rel="stylesheet"
     />
     <meta name="description" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" >
     <link rel="stylesheet" href="./assets/style.css" />
-    <script src="./assets/index.js"></script>
+    <script src="./assets/login.js"></script>
   </head>
   <body>
     <header>
@@ -21,7 +24,7 @@
         <ul>
           <li><a href="index.html#portfolio">projets</a></li>
           <li><a href="index.html#contact">contact</a></li>
-          <li><a href="./login.html">login</a></li>
+          <li><a id="loginactive" href="./login.html">login</a></li>
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
         </ul>
       </nav>
@@ -29,16 +32,27 @@
     <main class="logincard">
       <div class="login">
         <h2>Log In</h2>
+        <div id="msgerror">
+          <h3>Erreur dans l’identifiant ou le mot de passe</h3>
+        </div>
         <form>
-          <label >E-mail</label>
-          <input type="text" id="username" name="username" required />
-
+          <!--<label >E-mail</label>
+          <input type="text" id="username" name="username" value="" required />
           <label>Mot de passe</label>
-          <input type="password" id="password" name="password" required />
+          <input type="password" id="password" name="password" value="" required />
           <div class="loginbas">
-          <button type="submit">Se connecter</button>
+          <button type="submit" onClick="getValue();">Se connecter</button>
           <a a href=#>Mot de passe oublié</a>
         </div>
+      -->
+          <label>E-mail</label>
+          <input type="text" id="email" value="" />
+          <label>Mot de passe</label>
+          <input type="text" id="password" value="" />
+          <div class="loginbas">
+            <input type="button" id="btnconnection" onClick="getValue();" value="Se connecter"/>
+            <a a href="#">Mot de passe oublié</a>
+          </div>
         </form>
       </div>
     </main>

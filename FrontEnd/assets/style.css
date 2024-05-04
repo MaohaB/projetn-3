@@ -214,19 +214,27 @@ button:focus {
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	font-family: 'Work Sans' ;
+	font-family: "Work Sans";
 	font-size: 14px;
-}
-.login {
+  }
+  #loginactive {
+	font-weight: bolder;
+  }
+  .login {
 	margin-top: 30px;
 	padding: 20px;
-	width: 400px ;
+	width: 400px;
 	align-items: center;
-  	justify-content: center;
+	justify-content: center;
   }
   
- .login h2 {
+  .login h2 {
 	text-align: center;
+  }
+  #msgerror {
+	display: block;
+	text-align: center;
+	padding-top: 40px;
   }
   
   form {
@@ -242,10 +250,10 @@ button:focus {
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 500;
-	line-height: normal; 
+	line-height: normal;
   }
   
- .login input {
+  .login input {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
@@ -253,18 +261,23 @@ button:focus {
 	width: 380px;
 	text-align: center;
 	margin-bottom: 40px;
-	color: ##FFFEF8;
-	border: ##FFFEF8;
+	color: #fffef8;
+	border: #fffef8;
 	align-items: center;
- 	justify-content: center;
+	justify-content: center;
   }
-  .login button{
-	align-items: center;
- 	justify-content: center;
-	color: white;
-	background-color: #1D6154;
+  .login #btnconnection {
+	color: #fff;
+	text-align: center;
+	font-family: Syne;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	border-radius: 60px;
+	background: #1d6154;
 	width: 180px;
-	margin-bottom:30px;
+	margin-bottom: 30px;
   }
   .loginbas {
 	align-items: center;
@@ -278,5 +291,5 @@ button:focus {
   }
   /* lien nav login */
   nav a:hover {
-	color: #B1663C;
-}
+	color: #b1663c;
+  }

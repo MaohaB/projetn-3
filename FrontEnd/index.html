@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<title>Sophie Bluel - Architecte d'intérieur</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
-	<meta name="description" content="">
-	<link rel="stylesheet" href="./assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sophie Bluel - Architecte d'intérieur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <link rel="stylesheet" href="./assets/style.css" />
 	<script src="./assets/index.js"></script>
 
 </head>
 <body>
+	<div class="editor">
+		<i class="fa-regular fa-pen-to-square"></i><h2>Mode édition</h2>
+	</div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
@@ -37,7 +46,12 @@
 		</article>
 	</section>
 	<section id="portfolio">
+	<div class="projetlogin">
 		<h2>Mes Projets</h2>
+		<div class="modifier" id="affichermodale">
+		<i class="fa-regular fa-pen-to-square"></i><h2>modifier</h2>
+		</div>
+	</div>
 		<div id="boutons"> </div>
 		<div class="gallery"></div>
 	</section>
@@ -63,5 +77,15 @@
 		</ul>
 	</nav>
 </footer>
+<!--
+-->
+<div class="containermodale" id="modale">
+	<div class="modale" >
+		<span><i class="fa-solid fa-xmark" id="xmark"></i></span>
+		<h2>Galerie photo</h2>
+		<div id="ligne"></div>
+		<input type="submit" value="Ajouter une photo">
+	</div>
+</div>
 </body>
 </html>

@@ -49,247 +49,350 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
-	margin:auto;
-	font-family: 'Work Sans' ;
-	font-size: 14px;
+  max-width: 1140px;
+  margin: auto;
+  font-family: "Work Sans";
+  font-size: 14px;
 }
 header {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
 }
 section {
-	margin: 50px 0
+  margin: 50px 0;
 }
 
-h1{
-	display: flex;
-	flex-direction: column;
-	font-family: 'Syne';
-	font-size: 22px;
-	font-weight: 800;
-	color: #B1663C
+h1 {
+  display: flex;
+  flex-direction: column;
+  font-family: "Syne";
+  font-size: 22px;
+  font-weight: 800;
+  color: #b1663c;
 }
 
 h1 > span {
-	font-family: 'Work Sans';
-	font-size:10px;
-	letter-spacing: 0.1em;
-;
+  font-family: "Work Sans";
+  font-size: 10px;
+  letter-spacing: 0.1em;
 }
 
-h2{
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 30px;
-	color: #1D6154
+h2 {
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
+  color: #1d6154;
 }
 nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
-
+  display: flex;
+  align-items: center;
+  list-style-type: none;
 }
 nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
+  padding: 0 10px;
+  font-size: 1.2em;
 }
 
 li:hover {
-	color: #B1663C;
+  color: #b1663c;
 }
 #introduction {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 #introduction figure {
-	flex: 1
+  flex: 1;
 }
 #introduction img {
-	display: block;
-	margin: auto;
-	width: 80%;
+  display: block;
+  margin: auto;
+  width: 80%;
 }
 
 #introduction article {
-	flex: 1
+  flex: 1;
 }
 #introduction h2 {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 #introduction p {
-	margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 #portfolio h2 {
-	text-align: center;
-	margin-bottom: 1em;
+  text-align: center;
+  margin-bottom: 1em;
 }
 .gallery {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 .gallery img {
-	width: 100%;
-
+  width: 100%;
 }
 #contact {
-	width: 50%;
-margin: auto;
+  width: 50%;
+  margin: auto;
 }
 #contact > * {
-	text-align: center;
-
+  text-align: center;
 }
-#contact h2{
-	margin-bottom: 20px;
+#contact h2 {
+  margin-bottom: 20px;
 }
 #contact form {
-	text-align: left;
-	margin-top:30px;
-	display: flex;
-	flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 #contact input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 #contact label {
-	margin: 2em 0 1em 0;
+  margin: 2em 0 1em 0;
 }
 #contact textarea {
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	margin : 2em auto ;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px ;
+input[type="submit"] {
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
 }
 
 footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em
+  display: flex;
+  justify-content: flex-end;
+  margin: 2em;
 }
 #boutons {
-	display: flex;
-	justify-content: center; 
-	padding-bottom: 50px;
-	}
+  /*display none en login*/
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
 button {
-	font-family: 'Syne';
-	font-weight: 700;
-	text-align: center;
-	border-radius: 60px;
-	border:2px solid #1D6154;
-	background: #FFFEF8;
-	margin:10px;
-	padding: 10px 20px;
-	color: #1D6154;
+  font-family: "Syne";
+  font-weight: 700;
+  text-align: center;
+  border-radius: 60px;
+  border: 2px solid #1d6154;
+  background: #fffef8;
+  margin: 10px;
+  padding: 10px 20px;
+  color: #1d6154;
 }
 button:focus {
-	background-color: #1D6154;
-	color: #FFFEF8;
-	border: 2px solid #1D6154;
+  background-color: #1d6154;
+  color: #fffef8;
+  border: 2px solid #1d6154;
 }
 
 /* log in */
 .logincard {
-	margin-top: 8%;
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	font-family: "Work Sans";
-	font-size: 14px;
-  }
-  #loginactive {
-	font-weight: bolder;
-  }
-  .login {
-	margin-top: 30px;
-	padding: 20px;
-	width: 400px;
-	align-items: center;
-	justify-content: center;
-  }
-  
-  .login h2 {
-	text-align: center;
-  }
-  #msgerror {
-	display: block;
-	text-align: center;
-	padding-top: 40px;
-  }
-  
-  form {
-	display: flex;
-	flex-direction: column;
-	color: black;
-	margin-top: 50px;
-  }
-  
-  .login label {
-	margin-bottom: 6px;
-	font-family: "Work Sans";
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: normal;
-  }
-  
-  .login input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-	width: 380px;
-	text-align: center;
-	margin-bottom: 40px;
-	color: #fffef8;
-	border: #fffef8;
-	align-items: center;
-	justify-content: center;
-  }
-  .login #btnconnection {
-	color: #fff;
-	text-align: center;
-	font-family: Syne;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
-	border-radius: 60px;
-	background: #1d6154;
-	width: 180px;
-	margin-bottom: 30px;
-  }
-  .loginbas {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-  }
-  /*liens*/
-  a {
-	text-decoration: none;
-	color: black;
-  }
-  /* lien nav login */
-  nav a:hover {
-	color: #b1663c;
-  }
+  margin-top: 8%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: "Work Sans";
+  font-size: 14px;
+}
+#loginactive {
+  font-weight: bolder;
+}
+.login {
+  margin-top: 30px;
+  padding: 20px;
+  width: 400px;
+  align-items: center;
+  justify-content: center;
+}
+
+.login h2 {
+  text-align: center;
+}
+#msgerror {
+  display: block;
+  text-align: center;
+  padding-top: 40px;
+  color: #b1663c;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  margin-top: 50px;
+}
+
+.login label {
+  margin-bottom: 6px;
+  font-family: "Work Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.login input {
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  width: 380px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: black;
+  border: #fffef8;
+  align-items: center;
+  justify-content: center;
+}
+.login #btnconnection {
+  color: #fff;
+  text-align: center;
+  font-family: Syne;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 60px;
+  background: #1d6154;
+  width: 180px;
+  margin-bottom: 30px;
+}
+.loginbas {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+/*liens*/
+a {
+  text-decoration: none;
+  color: black;
+}
+/* lien nav login */
+nav a:hover {
+  color: #b1663c;
+}
+/* Login */
+/*mode edition nav*/
+.editor {
+  padding: 15px;
+  justify-content: center;
+  display: inline-flex;
+  flex-direction: row;
+  background-color: black;
+  width: 150%;
+  margin-left: -28%;
+}
+.editor i {
+  color: white;
+  padding-right: 12px;
+  margin-top: 2px;
+}
+.editor h2 {
+  color: white;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+/*modifier les projets*/
+.projetlogin {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+.modifier {
+  /* display flex pour modifier les projets*/
+  display: flex;
+  flex-direction: row;
+  padding-left: 28px;
+  text-align: center;
+}
+.modifier i {
+  color: black;
+  padding-right: 8px;
+  margin-top: 10px;
+}
+.modifier h2 {
+  color: black;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 8px;
+}
+/*modale*/
+#modale {
+  /*display flex via js*/
+  display: none;
+}
+.containermodale {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+.modale {
+  border-radius: 10px;
+  background: #FFF; 
+  width: 630px;
+  height: 670px; 
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.modale input {
+  color: #fff;
+  text-align: center;
+  font-family: Syne;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 60px;
+  border: #1d6154;
+  background: #1d6154;
+  width: 180px;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+}
+#ligne {
+  border-top: 2px solid #B3B3B3;
+  width: 420px; 
+}
+.fa-xmark {
+position: absolute;
+height: 200%;
+top: 30px;
+right: 40px;
+}

@@ -1,3 +1,4 @@
+// partie site visiteurs//
 // travaux//
 
 function getWorks() {
@@ -46,7 +47,6 @@ fetch("http://localhost:5678/api/categories")
     console.log(categories);
 
     const bouton = document.getElementById("boutons");
-	console.log(bouton);
     categories.forEach((category) => {
       const btn = document.createElement("button");
       btn.textContent = category.name;
@@ -54,25 +54,54 @@ fetch("http://localhost:5678/api/categories")
       bouton.appendChild(btn);
     });
 // filtres //
-const buttons = document.querySelectorAll("button")
-buttons.forEach(buttons => {
-	buttons.addEventListener("click",(e) => {
-		btnId = e.target.id
-		document.querySelectorAll(".work-item").forEach(workItem => {
-			workItem.style.display = "none";
-		});
-		//pour bouton "tous"//
-		if (btnId == "0") {
+    const buttons = document.querySelectorAll("button")
+	buttons.forEach(buttons => {
+		buttons.addEventListener("click",(e) => {
+			btnId = e.target.id
 			document.querySelectorAll(".work-item").forEach(workItem => {
-				workItem.style.display = "block";
-			})
-		}else {
-		// pour les autres boutons// 
-			document.querySelectorAll(`.work-item.category-id-${btnId}`).forEach(workItem => {
-				workItem.style.display = "block";
+				workItem.style.display = "none";
 			});
-		}
-		console.log(btnId)
+			//pour bouton "tous"//
+			if (btnId == "0") {
+				document.querySelectorAll(".work-item").forEach(workItem => {
+					workItem.style.display = "block";
+				})
+			}else {
+			// pour les autres boutons// 
+				document.querySelectorAll(`.work-item.category-id-${btnId}`).forEach(workItem => {
+					workItem.style.display = "block";
+				});
+			}
+			console.log(btnId)
+		});
 	});
+  })
+  
+// document.querySelector(".editor") => {editor.style.display = "none";}
+
+
+// partie site admin//
+// modale//
+
+//afficher la modale quand on clique sur modifier
+// getElementById à l'interieur d'une fonction
+document.addEventListener("DOMContentLoaded", function() {
+	// afficher la modale
+	const containerModal = document.querySelector(".containermodale")
+	document.getElementById("affichermodale").addEventListener('click', function () {
+	console.log("afficher la modale")
+	containerModal.style.display = "flex";
+	});
+	// fermer la modal sur la croix
+	document.getElementById("xmark").addEventListener('click', function () {
+	console.log("fermer la modale")
+	containerModal.style.display = "none";
+	});
+	// fermer la modal en dehors
+	containerModal.addEventListener('click', (e) => {
+		if (e.target.className == "containermodale") {
+			console.log("fermer la modale")
+			containerModal.style.display = "none";	
+		}
+	})
 });
-})

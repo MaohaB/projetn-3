@@ -91,9 +91,15 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("affichermodale").addEventListener('click', function () {
 	console.log("afficher la modale")
 	containerModal.style.display = "flex";
+	document.querySelector(".modale1").style.display = "flex";
+	document.querySelector(".modale2").style.display = "none";
 	});
 	// fermer la modal sur la croix
-	document.getElementById("xmark").addEventListener('click', function () {
+	document.getElementById("xmark1").addEventListener('click', function () {
+	console.log("fermer la modale")
+	containerModal.style.display = "none";
+	});
+	document.getElementById("xmark2").addEventListener('click', function () {
 	console.log("fermer la modale")
 	containerModal.style.display = "none";
 	});
@@ -104,4 +110,57 @@ document.addEventListener("DOMContentLoaded", function() {
 			containerModal.style.display = "none";	
 		}
 	})
+	// basculer vers la modale d'ajout photo
+	document.getElementById("ajoutphoto").addEventListener('click', function () {
+	console.log("ajout photo")
+	document.querySelector(".modale1").style.display = "none";
+	document.querySelector(".modale2").style.display = "flex";
+	});
+	// retour
+	document.getElementById("retour").addEventListener('click', function () {
+	console.log("retour")
+	document.querySelector(".modale1").style.display = "flex";
+	document.querySelector(".modale2").style.display = "none";
+	});
+	// fermer la modale après validation
+	document.getElementById("valider").addEventListener('click', function () {
+	console.log("valider")
+	containerModal.style.display = "none";
 });
+});
+// afficher les travaux dans la modale
+function displayWorksModal() {
+	fetch("http://localhost:5678/api/works")
+	  .then(function (response) {
+		if (response.ok) {
+		  return response.json();
+		}
+	  })
+	  .then(function (data) {
+		let works = data;
+		console.log(works);
+		works.forEach((work, index) => {
+		  // figure //
+		  const Figure = document.createElement("figure");
+		  Figure.setAttribute("class",`work-item category-id-${work.categoryId}`);
+		  Figure.setAttribute("id", `work-item-${work.id}`);
+		  // image //
+		  const Img = document.createElement("img");
+		  Img.setAttribute("src", work.imageUrl);
+		  Img.setAttribute("alt", work.title);
+		  Figure.appendChild(Img);
+  
+		  const p = document.createElement("p");
+		  p.setAttribute("class", "poubelle");
+		  Figure.appendChild(p);
+  
+  
+		  const icon = document.createElement("i");
+		  icon.classList.add("fa-solid", "fa-trash-can"); 
+		  p.appendChild(icon);
+
+		  document.querySelector("div.galleryModale").appendChild(Figure);
+		});
+	  });
+  }
+  displayWorksModal();

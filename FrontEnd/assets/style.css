@@ -323,7 +323,7 @@ nav a:hover {
   padding-top: 40px;
 }
 .modifier {
-  /* display flex pour modifier les projets*/
+  /* display flex pour modifier les projets Admin seulement*/
   display: flex;
   flex-direction: row;
   padding-left: 28px;
@@ -371,7 +371,32 @@ nav a:hover {
   align-items: center;
   position: relative;
 }
-.modale input {
+.modale1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+.modale2 {
+  display: none;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.modale h2 {
+color: #000;
+padding-top: 45px;
+padding-bottom: 15px;
+text-align: center;
+font-family: "Work Sans";
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.modale1 input {
   color: #fff;
   text-align: center;
   font-family: Syne;
@@ -386,13 +411,196 @@ nav a:hover {
   margin-bottom: 30px;
   padding: 10px 20px;
 }
+.modale2box {
+  width: 420px;
+}
+.form-group-photo {
+  width: 420px;
+  height: 169px;
+  border-radius: 3px;
+  background: #E8F1F6;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.file-input__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input__label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  color: #306685;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 800;
+  padding: 10px 28px;
+  border-radius: 50px;
+  background: #CBD6DC;
+}
+
+
+.fa-image {
+  font-size: 76px;
+  align-items: center;
+  margin-top: 3px;
+  color: #B9C5CC;
+}
+#taillemaxphoto {
+  color: #444;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+.modale2box input {
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  text-align: center;
+  margin-bottom: 40px;
+  color: black;
+  border: #fffef8;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding-left: 30px;
+  color: #444;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modale2 select {
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  text-align: left;
+  margin-bottom: 40px;
+  color: black;
+  background-color: #FFF;
+  border: #fffef8;
+  align-items: center;
+  justify-content: center;
+  padding-left: 30px;
+  color: #444;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modale2box label {
+margin-bottom: 10px;
+}
+.form-group-title {
+  text-align: left;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.form-group-id {
+  text-align: left;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+option {
+color: #444;
+font-family: "Work Sans";
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+#valider {
+  color: #fff;
+  text-align: center;
+  font-family: Syne;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 60px;
+  border: #1d6154;
+  background: #1d6154;
+  width: 180px;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+}
+
 #ligne {
   border-top: 2px solid #B3B3B3;
   width: 420px; 
 }
 .fa-xmark {
-position: absolute;
-height: 200%;
-top: 30px;
-right: 40px;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 25px;
+}
+.fa-arrow-left {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 25px;
+  }
+
+/* Travaux dans la modale*/
+.galleryModale {
+  display: flex;
+  flex-flow: row wrap;
+  width: 80%;
+  align-self: center;
+}
+.modale1 #ligne {
+  align-self: center;
+}
+.galleryModale img {
+  width: 85px;
+  height: 120px;
+  object-fit: cover;
+  padding: 5px;
+  align-self: start;
+  position: static;
+}
+.poubelle {
+  background-color: #000000af;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  position: absolute;
+  display: flex;
+}
+.poubelle:hover {
+  background-color: black;
+}
+.galleryModale p {
+  position: relative;
+  top: -122px;
+  right: -63px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+.fa-trash-can {
+  color: #FFF;
 }

@@ -229,7 +229,7 @@ button:focus {
   text-align: center;
 }
 #msgerror {
-  display: block;
+  display: none;
   text-align: center;
   padding-top: 40px;
   color: #b1663c;
@@ -292,11 +292,18 @@ nav a:hover {
   color: #b1663c;
 }
 /* Login */
+/* Partie Admin*/
+#logout {
+  display: flex;
+  margin-left: -20px;
+}
 /*mode edition nav*/
+
 .editor {
+  /*display flex pour l'admin*/
   padding: 15px;
   justify-content: center;
-  display: inline-flex;
+  display: none;
   flex-direction: row;
   background-color: black;
   width: 150%;
@@ -324,7 +331,7 @@ nav a:hover {
 }
 .modifier {
   /* display flex pour modifier les projets Admin seulement*/
-  display: flex;
+  display: none;
   flex-direction: row;
   padding-left: 28px;
   text-align: center;
@@ -604,3 +611,5 @@ line-height: normal;
 .fa-trash-can {
   color: #FFF;
 }
+
+

@@ -58,7 +58,7 @@ fetch("http://localhost:5678/api/categories")
 	buttons.forEach(buttons => {
 		buttons.addEventListener("click",(e) => {
 			btnId = e.target.id
-			document.querySelectorAll(".work-item").forEach(workItem => {
+			document.querySelectorAll("div.gallery .work-item").forEach(workItem => {
 				workItem.style.display = "none";
 			});
 			//pour bouton "tous"//
@@ -81,8 +81,35 @@ fetch("http://localhost:5678/api/categories")
 
 
 // partie site admin//
-// modale//
+// modifier quand connecter //
+document.addEventListener("DOMContentLoaded", function() {
+// on vérifie que le token est présent
+if (sessionStorage.getItem("token")) {
+	console.log("admin");
+	// afficher logout
+	document.getElementById("login").style.display = "none";
+	document.getElementById("logout").style.display = "flex";
+	// bouton modifier pour la modale
+	document.querySelector(".modifier").style.display = "flex";
+	// banniere noire
+	document.querySelector(".editor").style.display = "flex";
+	// desactiver les boutons filtres
+	document.getElementById("boutons").style.display = "none";
+	// deconnexion
+	document.getElementById("logout").addEventListener('click', function () {
+		console.log("deconnexion");
+		document.getElementById("login").style.display = "flex";
+		document.getElementById("logout").style.display = "none";
+		document.querySelector(".modifier").style.display = "none";
+		document.querySelector(".editor").style.display = "none";
+		document.getElementById("boutons").style.display = "flex";
+	})
+}
+});
 
+
+
+// modale//
 //afficher la modale quand on clique sur modifier
 // getElementById à l'interieur d'une fonction
 document.addEventListener("DOMContentLoaded", function() {

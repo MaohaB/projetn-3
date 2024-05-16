@@ -103,6 +103,8 @@ if (sessionStorage.getItem("token")) {
 		document.querySelector(".modifier").style.display = "none";
 		document.querySelector(".editor").style.display = "none";
 		document.getElementById("boutons").style.display = "flex";
+		//enlever le token
+		sessionStorage.removeItem("token");
 	})
 }
 });

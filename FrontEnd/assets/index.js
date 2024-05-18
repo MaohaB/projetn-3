@@ -168,7 +168,7 @@ function displayWorksModal() {
 	  .then(function (data) {
 		let works = data;
 		console.log(works);
-		works.forEach((work, index) => {
+		works.forEach((work, id) => {
 		  // figure //
 		  const Figure = document.createElement("figure");
 		  Figure.setAttribute("class",`work-item category-id-${work.categoryId}`);
@@ -179,17 +179,53 @@ function displayWorksModal() {
 		  Img.setAttribute("alt", work.title);
 		  Figure.appendChild(Img);
   
-		  const p = document.createElement("p");
-		  p.setAttribute("class", "poubelle");
-		  Figure.appendChild(p);
+		  const deleteButton = document.createElement("p");
+		  deleteButton.setAttribute("class", "poubelle");
+		  Figure.appendChild(deleteButton);
   
-  
+  //créer+intégrer les icones poubelles
 		  const icon = document.createElement("i");
-		  icon.classList.add("fa-solid", "fa-trash-can"); 
-		  p.appendChild(icon);
-
+		  icon.classList.add("fa-solid", "fa-trash-can");
+		  icon.setAttribute("id", work.id); 
+		  deleteButton.appendChild(icon);
+// intégrer le tout
 		  document.querySelector("div.galleryModale").appendChild(Figure);
-		});
-	  });
-  }
-  displayWorksModal();
+	
+	});
+	// function delete
+	deleteWork();
+});
+}
+displayWorksModal();
+
+// supprimer un projet
+
+function deleteWork(id) {
+	const trashAll = document.querySelectorAll(".fa-trash-can");
+	console.log(trashAll);
+	trashAll.forEach(icon => {
+		const id = icon.id
+		icon.addEventListener("click",(e)=>
+
+		//console.log(id)
+		
+		fetch('http://localhost:5678/api/works/' + id , {
+ 	 	method: 'DELETE',
+		 headers:{'Content-Type': 'application/json',
+		'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+		}})
+		.then((response) => {
+			if (response.status === 200) {
+			  // <Supprimer l'element>
+			  const deleteElement = document.getElementById(id);
+			  if (deleteElement) {
+				deleteElement.parentNode.removeChild(deleteElement);
+			  }
+			  // Actualiser la modale
+			  displayWorksModal();
+			  // Actualiser la gallerie
+			  getWorks();
+			}
+		  })
+	)
+	})}

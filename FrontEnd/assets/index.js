@@ -271,3 +271,25 @@ function previewImage(event) {
 	document.querySelector('.imgLabel').style.display = "flex";
 });
 }
+// créer les options
+function selectOption () {
+	fetch("http://localhost:5678/api/categories")
+	  .then(function (response) {
+		if (response.ok) {
+		  return response.json();
+		}
+	  })
+	  .then(function (data) {
+		let categories = data;
+		console.log(categories);
+	
+		const select = document.querySelector(".form-group-id select");
+		categories.forEach((category) => {
+		  const option = document.createElement("option");
+		  option.textContent = category.name;
+		  option.value = category.id;
+		  select.appendChild(option);
+		});
+	})
+	}
+	selectOption ();

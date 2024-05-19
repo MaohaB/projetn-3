@@ -96,20 +96,21 @@
 		<div class="form-group-photo">
 			<i class="fa-regular fa-image"></i>
 			<div class="file-input">
-				<input type="file" name="file-input" id="file-input" class="file-input__input"/>
-				<label class="file-input__label" for="file-input"><span>+  Ajouter photo</span></label>
+				<input type="file" name="file-input" id="Imgfile-input" class="imgInput" accept="image/*" onchange="previewImage(event)">
+				<label class="imgLabel" for="file-input"><span>+  Ajouter photo</span></label>
 			</div>
 			<p id="taillemaxphoto">jpg, png : 4mo max</p>
+			<img id="preview" >
 		</div>
 		<div class="modale2box">
 		<div class="form-group-title">
 			<label for="titre">Titre</label>
-			<input class="js-title" type="text" name="titre" id="titre">
+			<input class="addTitle" type="text" name="titre" id="titre">
 		</div>
 
 		<div class="form-group-id">
 			<label for="categorie">Catégorie</label>
-			<select name="categorie" id="categorie" class="js-categoryId">
+			<select name="categorie" id="categorie" class="addCategory">
 				<option value=""></option>
 				<option value="1">Objets</option>
 				<option value="2">Appartements</option>

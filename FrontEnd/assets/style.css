@@ -294,8 +294,8 @@ nav a:hover {
 /* Login */
 /* Partie Admin*/
 #logout {
-  display: flex;
-  margin-left: -20px;
+  display: none;
+  padding-left: -20px;
 }
 /*mode edition nav*/
 
@@ -418,6 +418,9 @@ line-height: normal;
   margin-bottom: 30px;
   padding: 10px 20px;
 }
+
+/* Ajouter un projet */
+/* Ensemble de la modale */
 .modale2box {
   width: 420px;
 }
@@ -432,17 +435,16 @@ line-height: normal;
   justify-content: space-around;
 }
 
-
-.file-input__input {
-  width: 0.1px;
-  height: 0.1px;
+.imgInput {
+  width: 180px;
+  height: 50px;
   opacity: 0;
   overflow: hidden;
   position: absolute;
-  z-index: -1;
+  cursor: pointer;
 }
 
-.file-input__label {
+.imgLabel {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -456,7 +458,6 @@ line-height: normal;
   border-radius: 50px;
   background: #CBD6DC;
 }
-
 
 .fa-image {
   font-size: 76px;
@@ -474,6 +475,11 @@ line-height: normal;
   line-height: normal;
 }
 
+#preview {
+  display: none;
+  width: 130px;
+  height: 169px;
+  }
 
 .modale2box input {
   height: 50px;
@@ -611,5 +617,6 @@ line-height: normal;
 .fa-trash-can {
   color: #FFF;
 }
+
 
 

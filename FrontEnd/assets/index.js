@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	})
 	// basculer vers la modale d'ajout photo
 	document.getElementById("ajoutphoto").addEventListener('click', function () {
-	console.log("ajout photo")
+	console.log("modale d'ajout photo")
 	document.querySelector(".modale1").style.display = "none";
 	document.querySelector(".modale2").style.display = "flex";
 	});
@@ -206,9 +206,7 @@ function deleteWork(id) {
 	trashAll.forEach(icon => {
 		const id = icon.id
 		icon.addEventListener("click",(e)=>
-
 		//console.log(id)
-		
 		fetch('http://localhost:5678/api/works/' + id , {
  	 	method: 'DELETE',
 		 headers:{'Content-Type': 'application/json',
@@ -229,3 +227,47 @@ function deleteWork(id) {
 		  })
 	)
 	})}
+
+
+// Ajouter un projet
+// Ajouter une img
+function previewImage(event) {
+
+	var input = event.target;
+	var image = document.getElementById('preview');
+	console.log(input.files[0])
+	if (input.files && input.files[0]) {
+	   var reader = new FileReader();
+	   reader.onload = function(e) {
+		// target.result = url d'image
+		  image.src = e.target.result;
+	   }
+	   reader.readAsDataURL(input.files[0]);
+	   // prévisualisation
+	  image.style.display = "block";
+	  input.style.display = "none";
+	  document.getElementById('taillemaxphoto').style.display = "none";
+	  document.querySelector('.form-group-photo i').style.display = "none";
+	  document.querySelector('.imgLabel').style.display = "none";
+	}
+// annuler en fermant la modale
+	document.getElementById("xmark2").addEventListener('click', function () {
+		console.log("effacer la prévisualisation")
+		image.src = null;
+		image.style.display = "none";
+		input.style.display = "flex";
+		document.getElementById('taillemaxphoto').style.display = "flex";
+		document.querySelector('.form-group-photo i').style.display = "flex";
+		document.querySelector('.imgLabel').style.display = "flex";
+		});
+// reset après validation
+ document.getElementById("valider").addEventListener('click', function () {
+	console.log("reset de l'image")
+	image.src = null;
+	image.style.display = "none";
+	input.style.display = "flex";
+	document.getElementById('taillemaxphoto').style.display = "flex";
+	document.querySelector('.form-group-photo i').style.display = "flex";
+	document.querySelector('.imgLabel').style.display = "flex";
+});
+}

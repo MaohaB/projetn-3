@@ -230,81 +230,117 @@ function deleteWork(id) {
 
 
 // Ajouter un projet
+
+
 // Ajouter une img
 function previewImage(event) {
-
-	var input = event.target;
-	var image = document.getElementById('preview');
-	console.log(input.files[0])
-	if (input.files && input.files[0]) {
-	   var reader = new FileReader();
-	   reader.onload = function(e) {
-		// target.result = url d'image
-		  image.src = e.target.result;
-	   }
-	   reader.readAsDataURL(input.files[0]);
-	   // prévisualisation
-	  image.style.display = "block";
-	  input.style.display = "none";
-	  document.getElementById('taillemaxphoto').style.display = "none";
-	  document.querySelector('.form-group-photo i').style.display = "none";
-	  document.querySelector('.imgLabel').style.display = "none";
-	}
-// annuler en fermant la modale
-	document.getElementById("xmark2").addEventListener('click', function () {
-		console.log("effacer la prévisualisation")
-		image.src = null;
-		image.style.display = "none";
-		input.style.display = "flex";
-		document.getElementById('taillemaxphoto').style.display = "flex";
-		document.querySelector('.form-group-photo i').style.display = "flex";
-		document.querySelector('.imgLabel').style.display = "flex";
-		});
-// reset après validation
- document.getElementById("valider").addEventListener('click', function () {
-	//console.log("reset de l'image")
-	image.src = null;
-	image.style.display = "none";
-	input.style.display = "flex";
-	document.getElementById('taillemaxphoto').style.display = "flex";
-	document.querySelector('.form-group-photo i').style.display = "flex";
-	document.querySelector('.imgLabel').style.display = "flex";
-});
+  var input = event.target;
+  var image = document.getElementById("preview");
+  console.log(input.files[0]);
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      // target.result = url d'image
+      image.src = e.target.result;
+    };
+    reader.readAsDataURL(input.files[0]);
+    // prévisualisation
+    image.style.display = "block";
+    input.style.display = "none";
+    document.getElementById("taillemaxphoto").style.display = "none";
+    document.querySelector(".form-group-photo i").style.display = "none";
+    document.querySelector(".imgLabel").style.display = "none";
+  }
+  // annuler en fermant la modale
+  document.getElementById("xmark2").addEventListener("click", function () {
+    console.log("effacer la prévisualisation");
+    image.src = null;
+    image.style.display = "none";
+    input.style.display = "flex";
+    document.getElementById("taillemaxphoto").style.display = "flex";
+    document.querySelector(".form-group-photo i").style.display = "flex";
+    document.querySelector(".imgLabel").style.display = "flex";
+  });
+  // reset après validation
+  document.getElementById("valider").addEventListener("click", function () {
+    //console.log("reset de l'image");
+    image.src = null;
+    image.style.display = "none";
+    input.style.display = "flex";
+    document.getElementById("taillemaxphoto").style.display = "flex";
+    document.querySelector(".form-group-photo i").style.display = "flex";
+    document.querySelector(".imgLabel").style.display = "flex";
+  });
 }
+
 // créer les options
-function selectOption () {
-	fetch("http://localhost:5678/api/categories")
-	  .then(function (response) {
-		if (response.ok) {
-		  return response.json();
-		}
-	  })
-	  .then(function (data) {
-		let categories = data;
-		console.log(categories);
-	
-		const select = document.querySelector(".form-group-id select");
-		categories.forEach((category) => {
-		  const option = document.createElement("option");
-		  option.textContent = category.name;
-		  option.value = category.id;
-		  select.appendChild(option);
-		});
-	})
-	}
-	selectOption ();
+function selectOption() {
+  fetch("http://localhost:5678/api/categories")
+    .then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then(function (data) {
+      let categories = data;
+      console.log(categories);
 
-// récuperer les données du formulaire
+      const select = document.querySelector(".form-group-id select");
+      categories.forEach((category) => {
+        const option = document.createElement("option");
+        option.textContent = category.name;
+        option.value = category.id;
+        select.appendChild(option);
+      });
+    });
+}
+selectOption();
 
+// récuperer et ajouter les données du formulaire
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("valider").addEventListener("click",(e) => {
-      event.preventDefault();
-      const title = document.querySelector(".addTitle").value;
-      const category = document.querySelector(".addCategory").value;
-      const image = document.querySelector(".imgInput").files[0];
-      const formData = new FormData();
-      formData.append("title", title);
-      formData.append("category", category);
-      formData.append("image", image);
-    console.log(formData)
- })})
+
+  document.getElementById("valider").addEventListener("click", (e) => {
+  // données du form
+  const title = document.querySelector(".addTitle").value;
+  const category = document.querySelector(".addCategory").value;
+  const image = document.querySelector(".imgInput").files[0];
+
+    if (title === "" || category === "" || image === undefined) {
+      console.log("Merci de remplir tous les champs");
+      return;
+    } else if (title !== "" && category !== "" && image !== undefined) {
+      console.log("Tous les champs OK");
+      try {
+        const formData = new FormData();
+        formData.append("title", title);
+        formData.append("category", category);
+        formData.append("image", image);
+        console.log(formData)
+
+        fetch("http://localhost:5678/api/works", {
+          method: "POST",
+          headers: {
+            Authorization: "Bearer " + sessionStorage.getItem("token"),
+          },
+          body: formData,
+        });
+         // Actualiser la gallerie
+
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  });
+  // changer la couleur du bouton valider
+  document.querySelector(".addTitle").onkeyup = function () {
+    if (document.querySelector(".addTitle").value === "" || document.querySelector(".addCategory").value === "" || document.querySelector(".imgInput").files[0] === undefined) {
+      document.getElementById("valider").style.background = "#A7A7A7";
+      document.getElementById("valider").style.border = "#A7A7A7";
+    } else {
+      document.getElementById("valider").style.background = "#1D6154";
+      document.getElementById("valider").style.border = "#1D6154";
+  }
+  };
+});
+
+

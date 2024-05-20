@@ -262,7 +262,7 @@ function previewImage(event) {
 		});
 // reset après validation
  document.getElementById("valider").addEventListener('click', function () {
-	console.log("reset de l'image")
+	//console.log("reset de l'image")
 	image.src = null;
 	image.style.display = "none";
 	input.style.display = "flex";
@@ -293,3 +293,18 @@ function selectOption () {
 	})
 	}
 	selectOption ();
+
+// récuperer les données du formulaire
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("valider").addEventListener("click",(e) => {
+      event.preventDefault();
+      const title = document.querySelector(".addTitle").value;
+      const category = document.querySelector(".addCategory").value;
+      const image = document.querySelector(".imgInput").files[0];
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("category", category);
+      formData.append("image", image);
+    console.log(formData)
+ })})

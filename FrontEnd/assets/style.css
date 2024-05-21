@@ -239,7 +239,7 @@ form {
   display: flex;
   flex-direction: column;
   color: black;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .login label {
@@ -423,6 +423,14 @@ line-height: normal;
 /* Ensemble de la modale */
 .modale2box {
   width: 420px;
+}
+#emptyField {
+  display: none;
+  justify-content: center;
+  color: #B1663C; 
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -20px;
 }
 .form-group-photo {
   width: 420px;

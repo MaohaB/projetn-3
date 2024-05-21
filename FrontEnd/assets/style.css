@@ -295,7 +295,7 @@ nav a:hover {
 /* Partie Admin*/
 #logout {
   display: none;
-  padding-left: -20px;
+  margin-left: -20px;
 }
 /*mode edition nav*/
 
@@ -566,7 +566,7 @@ line-height: normal;
   padding: 10px 20px;
 }
 
-#ligne {
+.ligne {
   border-top: 2px solid #B3B3B3;
   width: 420px; 
 }
@@ -590,7 +590,7 @@ line-height: normal;
   width: 80%;
   align-self: center;
 }
-.modale1 #ligne {
+.modale1 .ligne {
   align-self: center;
 }
 .galleryModale img {

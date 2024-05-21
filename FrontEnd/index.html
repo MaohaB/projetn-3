@@ -87,7 +87,7 @@
 		<span><i class="fa-solid fa-xmark" id="xmark1"></i></span>
 		<h2>Galerie photo</h2>
 		<div class="galleryModale"></div>
-		<div id="ligne"></div>
+		<div class="ligne"></div>
 		<input type="submit" id="ajoutphoto" value="Ajouter une photo">
 	</div>
 	<div class="modale2" >
@@ -96,11 +96,11 @@
 		<div class="form-group-photo">
 			<i class="fa-regular fa-image"></i>
 			<div class="file-input">
-				<input type="file" name="file-input" id="Imgfile-input" class="imgInput" accept="image/*" onchange="previewImage(event)">
+				<input type="file" name="file-input" id="Imgfile-input" class="imgInput" accept="image/*">
 				<label class="imgLabel" for="file-input"><span>+  Ajouter photo</span></label>
 			</div>
 			<p id="taillemaxphoto">jpg, png : 4mo max</p>
-			<img id="preview" >
+			<img id="preview" alt="preview" src="">
 		</div>
 		<div class="modale2box">
 			<p id="emptyField">Merci de remplir tous les champs</p>
@@ -121,7 +121,7 @@
 		</div>
 		</form>
 		</div>
-		<div id="ligne"></div>
+		<div class="ligne"></div>
 		<input type="submit" id="valider" class="valider" value="Valider">
 	</div>
 	</div>

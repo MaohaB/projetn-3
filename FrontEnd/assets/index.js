@@ -239,8 +239,9 @@ function getWorks() {
   // Ajouter un projet
   
   // Ajouter une img
-  function previewImage(event) {
-	var input = event.target;
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector(".imgInput").onchange = function(){
+	var input = document.getElementById("Imgfile-input");
 	var image = document.getElementById("preview");
 	console.log(input.files[0]);
 	if (input.files && input.files[0]) {
@@ -277,7 +278,7 @@ function getWorks() {
 	  document.querySelector(".form-group-photo i").style.display = "flex";
 	  document.querySelector(".imgLabel").style.display = "flex";
 	});
-  }
+  }})
   
   // créer les options
   function selectOption() {

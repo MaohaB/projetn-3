@@ -198,6 +198,7 @@ button {
   margin: 10px;
   padding: 10px 20px;
   color: #1d6154;
+  cursor: pointer;
 }
 button:focus {
   background-color: #1d6154;
@@ -276,6 +277,7 @@ form {
   background: #1d6154;
   width: 180px;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 .loginbas {
   align-items: center;
@@ -335,6 +337,7 @@ nav a:hover {
   flex-direction: row;
   padding-left: 28px;
   text-align: center;
+  cursor: pointer;
 }
 .modifier i {
   color: black;
@@ -381,7 +384,7 @@ nav a:hover {
 .modale1 {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: start;
   height: 100%;
 }
 .modale2 {
@@ -389,7 +392,7 @@ nav a:hover {
   height: 100%;
   width: 100%;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
   position: relative;
 }

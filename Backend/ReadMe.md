@@ -24,3 +24,12 @@ Lien pour voir la
 [documentation Swagger](http://localhost:5678/api-docs/)
 
 Pour lire la documentation, utiliser Chrome ou Firefox
+
+
+email: 
+sophie.bluel@test.tld
+
+password: 
+S0phie 
+
+Malt & Juniper - New York
